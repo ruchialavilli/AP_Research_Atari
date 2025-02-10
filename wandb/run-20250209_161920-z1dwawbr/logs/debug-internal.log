@@ -1,0 +1,16 @@
+{"time":"2025-02-09T16:19:21.437871-08:00","level":"INFO","msg":"stream: starting","core version":"0.19.4","symlink path":"/Users/ruchi/dev/AP_Research_Atari/wandb/run-20250209_161920-z1dwawbr/logs/debug-core.log"}
+{"time":"2025-02-09T16:19:21.752258-08:00","level":"INFO","msg":"created new stream","id":"z1dwawbr"}
+{"time":"2025-02-09T16:19:21.752316-08:00","level":"INFO","msg":"stream: started","id":"z1dwawbr"}
+{"time":"2025-02-09T16:19:21.752404-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"z1dwawbr"}
+{"time":"2025-02-09T16:19:21.752453-08:00","level":"INFO","msg":"handler: started","stream_id":"z1dwawbr"}
+{"time":"2025-02-09T16:19:21.752479-08:00","level":"INFO","msg":"sender: started","stream_id":"z1dwawbr"}
+{"time":"2025-02-09T16:19:21.981484-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-02-09T16:19:31.750931-08:00","level":"INFO","msg":"stream: closing","id":"z1dwawbr"}
+{"time":"2025-02-09T16:19:31.750968-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-02-09T16:19:31.751459-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-02-09T16:19:33.26505-08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2025-02-09T16:19:33.683827-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-02-09T16:19:33.824018-08:00","level":"INFO","msg":"handler: closed","stream_id":"z1dwawbr"}
+{"time":"2025-02-09T16:19:33.824053-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"z1dwawbr"}
+{"time":"2025-02-09T16:19:33.824144-08:00","level":"INFO","msg":"sender: closed","stream_id":"z1dwawbr"}
+{"time":"2025-02-09T16:19:33.824453-08:00","level":"INFO","msg":"stream: closed","id":"z1dwawbr"}

@@ -1,0 +1,44 @@
+{
+  "os":  "macOS-15.2-arm64-arm-64bit",
+  "python":  "CPython 3.12.4",
+  "startedAt":  "2025-02-10T01:04:40.534067Z",
+  "program":  "/Users/ruchi/dev/AP_Research_Atari/ppo.py",
+  "codePath":  "ppo.py",
+  "git":  {
+    "remote":  "https://github.com/ruchialavilli/AP_Research_Atari.git",
+    "commit":  "1cef292a75df28df1f6d976838e43b7dedd5cc1d"
+  },
+  "email":  "ruchi.alavilli@gmail.com",
+  "root":  "/Users/ruchi/dev/AP_Research_Atari",
+  "host":  "Oahu.local",
+  "executable":  "/opt/homebrew/opt/python@3.12/bin/python3.12",
+  "codePathLocal":  "ppo.py",
+  "cpu_count":  8,
+  "cpu_count_logical":  8,
+  "disk":  {
+    "/":  {
+      "total":  "494384795648",
+      "used":  "285962493952"
+    },
+    "/System/Volumes/Data":  {
+      "total":  "494384795648",
+      "used":  "285962493952"
+    }
+  },
+  "memory":  {
+    "total":  "17179869184"
+  },
+  "cpu":  {
+    "count":  8,
+    "countLogical":  8
+  },
+  "apple":  {
+    "name":  "Apple M1 Pro",
+    "ecpuCores":  2,
+    "pcpuCores":  6,
+    "gpuCores":  14,
+    "memoryGb":  16,
+    "swapTotalBytes":  "8589934592",
+    "ramTotalBytes":  "17179869184"
+  }
+}

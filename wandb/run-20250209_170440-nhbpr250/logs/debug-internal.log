@@ -1,0 +1,16 @@
+{"time":"2025-02-09T17:04:40.536962-08:00","level":"INFO","msg":"stream: starting","core version":"0.19.4","symlink path":"/Users/ruchi/dev/AP_Research_Atari/wandb/run-20250209_170440-nhbpr250/logs/debug-core.log"}
+{"time":"2025-02-09T17:04:40.648212-08:00","level":"INFO","msg":"created new stream","id":"nhbpr250"}
+{"time":"2025-02-09T17:04:40.64826-08:00","level":"INFO","msg":"stream: started","id":"nhbpr250"}
+{"time":"2025-02-09T17:04:40.648518-08:00","level":"INFO","msg":"handler: started","stream_id":"nhbpr250"}
+{"time":"2025-02-09T17:04:40.648585-08:00","level":"INFO","msg":"sender: started","stream_id":"nhbpr250"}
+{"time":"2025-02-09T17:04:40.648602-08:00","level":"INFO","msg":"writer: Do: started","stream_id":"nhbpr250"}
+{"time":"2025-02-09T17:04:40.813421-08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-02-09T17:04:52.103609-08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2025-02-09T17:05:05.891063-08:00","level":"INFO","msg":"stream: closing","id":"nhbpr250"}
+{"time":"2025-02-09T17:05:05.891282-08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-02-09T17:05:05.891688-08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-02-09T17:05:06.356776-08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-02-09T17:05:06.633588-08:00","level":"INFO","msg":"handler: closed","stream_id":"nhbpr250"}
+{"time":"2025-02-09T17:05:06.633602-08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"nhbpr250"}
+{"time":"2025-02-09T17:05:06.633877-08:00","level":"INFO","msg":"sender: closed","stream_id":"nhbpr250"}
+{"time":"2025-02-09T17:05:06.634396-08:00","level":"INFO","msg":"stream: closed","id":"nhbpr250"}

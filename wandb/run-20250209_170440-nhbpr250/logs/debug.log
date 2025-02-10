@@ -1,0 +1,24 @@
+2025-02-09 17:04:40,256 INFO    MainThread:14364 [wandb_setup.py:_flush():68] Current SDK version is 0.19.4
+2025-02-09 17:04:40,256 INFO    MainThread:14364 [wandb_setup.py:_flush():68] Configure stats pid to 14364
+2025-02-09 17:04:40,256 INFO    MainThread:14364 [wandb_setup.py:_flush():68] Loading settings from /Users/ruchi/.config/wandb/settings
+2025-02-09 17:04:40,256 INFO    MainThread:14364 [wandb_setup.py:_flush():68] Loading settings from /Users/ruchi/dev/AP_Research_Atari/wandb/settings
+2025-02-09 17:04:40,256 INFO    MainThread:14364 [wandb_setup.py:_flush():68] Loading settings from environment variables
+2025-02-09 17:04:40,257 INFO    MainThread:14364 [wandb_init.py:setup_run_log_directory():624] Logging user logs to /Users/ruchi/dev/AP_Research_Atari/wandb/run-20250209_170440-nhbpr250/logs/debug.log
+2025-02-09 17:04:40,257 INFO    MainThread:14364 [wandb_init.py:setup_run_log_directory():625] Logging internal logs to /Users/ruchi/dev/AP_Research_Atari/wandb/run-20250209_170440-nhbpr250/logs/debug-internal.log
+2025-02-09 17:04:40,262 INFO    MainThread:14364 [wandb_init.py:init():743] calling init triggers
+2025-02-09 17:04:40,262 INFO    MainThread:14364 [wandb_init.py:init():748] wandb.init called with sweep_config: {}
+config: {'policy': 'PPO_MlpPolicy', 'learning_rate': 0.000827, 'gamma': 0.96979, 'gae_lambda': 0.9268, 'ent_coef': 1.99e-05}
+2025-02-09 17:04:40,262 INFO    MainThread:14364 [wandb_init.py:init():776] starting backend
+2025-02-09 17:04:40,487 INFO    MainThread:14364 [wandb_init.py:init():780] sending inform_init request
+2025-02-09 17:04:40,533 INFO    MainThread:14364 [backend.py:_multiprocessing_setup():97] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2025-02-09 17:04:40,533 INFO    MainThread:14364 [wandb_init.py:init():795] backend started and connected
+2025-02-09 17:04:40,536 INFO    MainThread:14364 [wandb_init.py:init():888] updated telemetry
+2025-02-09 17:04:40,554 INFO    MainThread:14364 [wandb_init.py:init():915] communicating run to backend with 90.0 second timeout
+2025-02-09 17:04:40,810 INFO    MainThread:14364 [wandb_init.py:init():967] starting run threads in backend
+2025-02-09 17:04:41,130 INFO    MainThread:14364 [wandb_run.py:_console_start():2409] atexit reg
+2025-02-09 17:04:41,130 INFO    MainThread:14364 [wandb_run.py:_redirect():2259] redirect: wrap_raw
+2025-02-09 17:04:41,131 INFO    MainThread:14364 [wandb_run.py:_redirect():2324] Wrapping output streams.
+2025-02-09 17:04:41,131 INFO    MainThread:14364 [wandb_run.py:_redirect():2349] Redirects installed.
+2025-02-09 17:04:41,132 INFO    MainThread:14364 [wandb_init.py:init():1009] run started, returning control to user process
+2025-02-09 17:04:42,102 INFO    MainThread:14364 [wandb_run.py:_tensorboard_callback():1464] tensorboard callback: runs/ppo_breakout/PPO_4, True
+2025-02-09 17:05:05,891 WARNING MsgRouterThr:14364 [router.py:message_loop():75] message_loop has been closed

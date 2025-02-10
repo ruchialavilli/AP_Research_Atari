@@ -1,27 +1,19 @@
 # ppo - no noise
 # /opt/anaconda3/lib/python3.12
-
-# setting the path for python3.12
 import sys
 sys.path.insert(0, '/opt/anaconda3/lib/python3.12/site-packages')
-
-# importing packages
 import gymnasium as gym
 import numpy as np
 import wandb
 import logging
-
-# importing tools for evalutaion
 from stable_baselines3.common.callbacks import EvalCallback
 from stable_baselines3.common.evaluation import evaluate_policy
 # from wand.integration.sb3 import WandbCallback
-
-# importing PPO and logger tools
 from stable_baselines3.common.logger import configure
+# import pdb
 from stable_baselines3 import PPO
 from stable_baselines3.common.vec_env import DummyVecEnv, VecVideoRecorder
 
-# importing environment packages
 import ale_py
 gym.register_envs(ale_py)
 
@@ -29,7 +21,6 @@ gym.register_envs(ale_py)
 seed = 42
 np.random.seed(seed)
 
-# creating the environment for training
 def make_env():
     env = gym.make("ALE/Breakout-v5", render_mode="rgb_array")
     env = gym.wrappers.RecordEpisodeStatistics(env)  # record stats such as returns
@@ -37,15 +28,6 @@ def make_env():
     env.action_space.seed(seed)
     return env
 
-# creating the environment for testing
-def make_env_pong():
-    env = gym.make("ALE/Pong-v5", render_mode="rgb_array")
-    env = gym.wrappers.RecordEpisodeStatistics(env)  # record stats such as returns
-    env.reset(seed=seed) 
-    env.action_space.seed(seed)
-    return env
-
-# saving important configs to wandb (data logger)
 run = wandb.init(
     project="atari_ppo_breakout",
     config = {"policy": "PPO_MlpPolicy", "learning_rate": 0.000827, "gamma":0.96979, "gae_lambda":0.92680, "ent_coef":.0000199},
@@ -55,11 +37,10 @@ run = wandb.init(
 
 )
 
-# establishing environment pt.2
 env = DummyVecEnv([make_env])
-env = VecVideoRecorder(env, f"videos/{run.id}", record_video_trigger = lambda x: x % 2000 == 0, video_length=200) 
+env = VecVideoRecorder(env, f"videos/test1", record_video_trigger = lambda x: x % 2000 == 0, video_length=200) # f"videos/{run.id}"
 
-# Instantiate the agent without noise (things in comments are logger debuggers in case it is necessary)
+# Instantiate the agent without noise
 #tmp_path = "/tmp/sb3_log/"
 #new_logger = configure(tmp_path, ["stdout", "csv", "tensorboard"])
 model = PPO("MlpPolicy", env, learning_rate= 0.000827, gamma = 0.96979, gae_lambda= 0.92680, ent_coef= 0.0000199, verbose=1, tensorboard_log=f"runs/ppo_breakout")
@@ -68,7 +49,7 @@ model = PPO("MlpPolicy", env, learning_rate= 0.000827, gamma = 0.96979, gae_lamb
 # Train the agent
 model.learn(total_timesteps= 300000,
             #callback=WandbCallback(gradient_save_freq=200, model_save_path=f"models/{run.id}", verbose=2)
-            callback=EvalCallback(env, best_model_save_path=f"models/best/{run.id}", log_path="./evalLogs/", eval_freq=1000)
+            callback=EvalCallback(env, best_model_save_path=f"models/best/test1", log_path="./evalLogs/", eval_freq=1000)
 )
 
 # Save the agent
@@ -80,14 +61,13 @@ del model # remove to demonstrate saving and loading
 # Load the agent
 model = PPO.load("atari_ppo_breakout")
 
-# Evaluate the agent performance from training with the same game
+# Evaluate the agent
 mean_reward, std_reward = evaluate_policy(model, env, n_eval_episodes=10)
 wandb.log({"mean_reward": mean_reward, "std_reward": std_reward})
 
 print(f"mean reward: {mean_reward} +/- {std_reward}")
 obs = vec_env.reset()
 
-# continue testing agent performance of same game
 reward_total = 0
 for _ in range(1000): 
     action, _states = model.predict(obs)
@@ -101,29 +81,3 @@ for _ in range(1000):
 
 print(reward_total)
 env.close()
-
-# establish new environment for Pong
-new_env = DummyVecEnv([make_env_pong])
-new_env = VecVideoRecorder(new_env, f"videos/{run.id}", record_video_trigger = lambda x: x % 2000 == 0, video_length=200) 
-
-# Evaluate the agent performance from Pong
-mean_reward, std_reward = evaluate_policy(model, new_env, n_eval_episodes=10)
-wandb.log({"mean_reward": mean_reward, "std_reward": std_reward})
-
-print(f"mean reward: {mean_reward} +/- {std_reward}")
-obs = new_env.reset()
-
-# continue testing agent performance of different game
-reward_total = 0
-for _ in range(1000): 
-    action, _states = model.predict(obs)
-    obs, rewards, dones, info = new_env.step(action)
-    reward_total += rewards
-    wandb.log({"returns" : reward_total, "reward": rewards})
-    # print(rewards)
-    if dones:
-        reward_total = 0
-        obs = new_env.step.reset()
-
-print(reward_total)
-new_env.close()
